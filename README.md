@@ -296,3 +296,15 @@ some time, press Shift-Alt-T to print the analysis results on the console.
     node src/js/commands/instrument.js --inbrowser --smemory --analysis analyses/likelytype/LikelyTypeInferEngineIB.js --outputDir /tmp tests/tizen/annex
     open file:///tmp/annex/index.html
 
+***
+
+This repository is contains information related to the tool Jalangi presented Foundations of Software Engineering, 2013. The tool was originally presented in [this paper](http://dl.acm.org/citation.cfm?doid=2491411.2494598).
+
+This repository _is not_ the original repository for this tool. Here are some links to the original project:
+* [The Original GitHub Repo](https://github.com/SRA-SiliconValley/jalangi)
+
+In this repository, for ExampleTool you will find:
+* :white_check_mark: Source code (available)
+* :white_check_mark: Instructions for interacting with the code directly (available above)
+
+This repository was constructed by [Justin A. Middleton](https://github.com/JustinAMiddleton) under the supervision of [Emerson Murphy-Hill](https://github.com/CaptainEmerson). Thanks to Koushik Sen et al. for their help in establishing this repository. 
