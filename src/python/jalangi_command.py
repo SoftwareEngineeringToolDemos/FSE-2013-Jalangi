@@ -137,7 +137,7 @@ class SymbolicCommand:
         parser.add_option("-i", "--inputs", dest="inputs",
                           help="Bound on number of inputs (default 1000)", default=1000)
         parser.add_option("-a", "--analysis", dest="analysis",
-                          help="Bound on number of inputs (default 1000)", default="analyses/puresymbolic/Multiple")
+                          help="Bound on number of inputs (default 1000)", default="src/js/analyses/puresymbolic/Multiple")
         (options, args) = parser.parse_args(args=params)
         if len(args) < 1:
             print "You must specify a filename"
