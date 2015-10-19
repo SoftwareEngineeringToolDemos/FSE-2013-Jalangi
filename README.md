@@ -298,12 +298,12 @@ some time, press Shift-Alt-T to print the analysis results on the console.
 
 ***
 
-This repository is contains information related to the tool Jalangi presented Foundations of Software Engineering, 2013. The tool was originally presented in [this paper](http://dl.acm.org/citation.cfm?doid=2491411.2494598).
+This repository contains information related to the tool Jalangi presented at Foundations of Software Engineering, 2013. The tool was originally presented in [this paper](http://dl.acm.org/citation.cfm?doid=2491411.2494598).
 
 This repository _is not_ the original repository for this tool. Here are some links to the original project:
 * [The Original GitHub Repo](https://github.com/SRA-SiliconValley/jalangi)
 
-In this repository, for ExampleTool you will find:
+In this repository, for Jalangi Tool, you will find:
 * :white_check_mark: Source code (available)
 * :white_check_mark: Instructions for interacting with the code directly (available above)
 
