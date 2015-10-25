@@ -302,9 +302,12 @@ This repository contains information related to the tool Jalangi presented at Fo
 
 This repository _is not_ the original repository for this tool. Here are some links to the original project:
 * [The Original GitHub Repo](https://github.com/SRA-SiliconValley/jalangi)
+* [Project Page](http://www.eecs.berkeley.edu/~gongliang13/jalangi_ff/) (with Firefox Plug-in)
+* [Video of the Tool](http://srl.cs.berkeley.edu/~ksen/jalangi.html) (integrated into Tizen IDE)
 
 In this repository, for Jalangi Tool, you will find:
 * :white_check_mark: Source code (available)
 * :white_check_mark: Instructions for interacting with the code directly (available above)
+* :x: Plug-in for Tizen IDE (not available)
 
-This repository was constructed by [Justin A. Middleton](https://github.com/JustinAMiddleton) under the supervision of [Emerson Murphy-Hill](https://github.com/CaptainEmerson). Thanks to Koushik Sen et al. for their help in establishing this repository. 
+This repository was constructed by [Justin A. Middleton](https://github.com/JustinAMiddleton) under the supervision of [Emerson Murphy-Hill](https://github.com/CaptainEmerson). Thanks to Koushik Sen, Swaroop Kalasapur, Tasneem Brutch, and Simon Gibbs for their help in establishing this repository. 
