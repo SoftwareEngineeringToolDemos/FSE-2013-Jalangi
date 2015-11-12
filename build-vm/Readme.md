@@ -6,7 +6,7 @@
 
 The console then prints out the script's progress, which will take several minutes before completion. Midway through the process, a window for the new VM should open on your desktop, but you shouldn't try to use the VM until your initial terminal is finished running scripts.
 
-In this version, the script only creates an instance of Ubuntu 14.04 and installs Java 7. This script was modified slightly from the command line installation that the official Jalangi Readme provides.
+In this version, the script only creates an instance of Ubuntu 14.04 and installs Java 7. This script was modified slightly from the command line installation that the [official Jalangi Readme](https://github.com/SoftwareEngineeringToolDemos/FSE-2013-Jalangi/blob/master/README.md) provides.
 
 ###VM Credentials:
 
