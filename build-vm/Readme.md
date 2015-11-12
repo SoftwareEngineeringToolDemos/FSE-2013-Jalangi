@@ -20,3 +20,5 @@ Password: vagrant
 The base box used for the Vagrant script is [box-cutter/ubuntu1404-desktop](https://vagrantcloud.com/box-cutter/boxes/ubuntu1404-desktop).
 
 You may need SSH for Vagrant to work. For Windows, you can use OpenSSH as part of [Cygwin](https://www.cygwin.com/).
+
+The commands for silenty installing Java were found [here](http://askubuntu.com/questions/190582/installing-java-automatically-with-silent-option).
