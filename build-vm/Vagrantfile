@@ -1,0 +1,39 @@
+# Vagrantfile for creating the Jalangi virtualbox. Stops short of installing jalangi.
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure(2) do |config|
+  config.vm.box = "box-cutter/ubuntu1404-desktop"
+  #config.vm.box = "ubuntu/trusty64"
+  
+  config.vm.provider "virtualbox" do |vb|
+     # Display the VirtualBox GUI when booting the machine
+     vb.gui = true
+  
+     # Customize the amount of memory on the VM:
+     vb.memory = "1024"
+  end
+
+  config.vm.provision "shell", inline: <<-SHELL
+     sudo apt-get update     
+#     sudo apt-get install python-software-properties python g++ make
+#     sudo apt-get install python-setuptools
+#     sudo add-apt-repository -y ppa:chris-lea/node.js
+#     sudo apt-get update
+#     sudo apt-get install -y nodejs
+#     sudo add-apt-repository -y ppa:webupd8team/java
+#     sudo apt-get update
+     echo "oracle-java7-installer shared/accepted-oracle-license-v1-1 select true" \
+          | sudo debconf-set-selections
+     sudo apt-get install -y oracle-java7-installer
+     sudo update-java-alternatives -s java-7-oracle
+#     sudo apt-get install -y git
+#     sudo apt-get install libgmp10
+#     sudo apt-get install -y chromium-browser
+#     cd Desktop
+#     git clone https://github.com/SoftwareEngineeringToolDemos/FSE-2013-Jalangi.git
+#     cd FSE-2013-Jalangi
+  SHELL
+end
