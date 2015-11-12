@@ -1,3 +1,4 @@
+#Building the Jalangi VM:
 ###Instructions:
 1. Download and install [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/).
 2. Download this folder ("build-vm").
