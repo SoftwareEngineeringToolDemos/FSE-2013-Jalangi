@@ -1,43 +1,40 @@
 INSTALLATION INSTRUCTIONS:
 
-On Ubuntu, you can install most of the requirements by running
-this script, altered slightly from the official README.md:
+1. Run the following collection of commands in a terminal
+   (taken and modified slightly from official README)
+
+	sudo apt-get update
+	sudo apt-get install python-software-properties python g++ make
+	sudo add-apt-repository ppa:chris-lea/node.js
+	sudo apt-get update
+	sudo apt-get install nodejs
+	sudo add-apt-repository ppa:webupd8team/java
+	sudo apt-get update
+	sudo apt-get install oracle-java7-installer
+	sudo update-java-alternatives -s java-7-oracle
+	sudo apt-get install git
+	sudo apt-get install libgmp10
+	sudo apt-get install chromium-browser
+	sudo apt-get install python-setuptools
 
 
-sudo apt-get update
-sudo apt-get install python-software-properties python g++ make
-sudo add-apt-repository ppa:chris-lea/node.js
-sudo apt-get update
-sudo apt-get install nodejs
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install oracle-java7-installer
-sudo update-java-alternatives -s java-7-oracle
-sudo apt-get install git
-sudo apt-get install libgmp10
-sudo apt-get install chromium-browser
-sudo apt-get install python-setuptools
+2. Download the repository from its home on GitHub 
+   (https://github.com/SRA-SiliconValley/jalangi).
 
+3. Navigate to that folder in a terminal on your machine 
+   and type the following:
 
-Be sure as well to download the repository from its home
-on GitHub (https://github.com/SRA-SiliconValley/jalangi).
+	python ./scripts/install.py
 
-Once you have, navigate to that folder in a terminal on your 
-machine and type the following:
+4. To run tests, type the following:
 
-
-python ./scripts/install.py
-
-
-Most tests will pass. Some might fail because a file reference
-to the author's original machine is hardcoded into a comparison
-for a few tests' results. In these, you can typically compare
-the results by looking at the tests' output.
+	npm test
+	
 
 For other OSs, you will need these dependencies, as written in
 the official README.md:
 
-
+"
     Latest version of Node.js available at http://nodejs.org/. 
 	We have tested Jalangi with Node v0.10.25.
     Sun's JDK 1.6 or higher. We have tested Jalangi with Java 1.6.0_43.
@@ -52,6 +49,7 @@ On Windows you need the following extra dependencies:
 
     Install Microsoft Visual Studio 2010 (Free express version is fine).
     If on 64bit also install Windows 7 64-bit SDK.
+"
 
 Reference: https://github.com/SRA-SiliconValley/jalangi
 
