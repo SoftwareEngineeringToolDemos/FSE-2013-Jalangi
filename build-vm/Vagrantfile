@@ -1,4 +1,4 @@
-# Vagrantfile for creating the Jalangi virtualbox. 
+# Vagrantfile for creating the Jalangi virtualbox. Stops short of installing jalangi.
 
 Vagrant.configure(2) do |config|
   config.vm.box = "box-cutter/ubuntu1404-desktop"
@@ -7,26 +7,79 @@ Vagrant.configure(2) do |config|
   config.vm.provider "virtualbox" do |vb|
      vb.gui = true
      vb.memory = "1024"
+
+     #Disable USB
+     #http://hameedullah.com/vagrant-101-basic-virtual-machine-customizations.html
+     vb.customize ["modifyvm", :id, "--usb", "off"]
+     vb.customize ["modifyvm", :id, "--usbehci", "off"]
   end
 
   config.vm.provision "shell", inline: <<-SHELL
-     sudo apt-get update     
-#     sudo apt-get install python-software-properties python g++ make
-#     sudo apt-get install python-setuptools
-#     sudo add-apt-repository -y ppa:chris-lea/node.js
-#     sudo apt-get update
-#     sudo apt-get install -y nodejs
+     #Installation instructions, modified from official README
+     sudo apt-get update   
+     sudo apt-get install -y python-software-properties python g++ make
+     sudo apt-get install -y python-setuptools
+     sudo add-apt-repository -y ppa:chris-lea/node.js
+     sudo apt-get update
+     sudo apt-get install -y nodejs
      sudo add-apt-repository -y ppa:webupd8team/java
      sudo apt-get update
      echo "oracle-java7-installer shared/accepted-oracle-license-v1-1 select true" \
           | sudo debconf-set-selections
      sudo apt-get install -y oracle-java7-installer
      sudo update-java-alternatives -s java-7-oracle
-#     sudo apt-get install -y git
-#     sudo apt-get install libgmp10
-#     sudo apt-get install -y chromium-browser
-#     cd Desktop
-#     git clone https://github.com/SoftwareEngineeringToolDemos/FSE-2013-Jalangi.git
-#     cd FSE-2013-Jalangi
+     sudo apt-get update
+     sudo apt-get install -y git
+     sudo apt-get install libgmp10
+     sudo apt-get install -y chromium-browser
+     sudo npm install npm -g
+     sudo npm cache clean
+     sudo apt-get update
+
+     #Clone GitHub repository
+     cd Desktop
+     git clone https://github.com/SoftwareEngineeringToolDemos/FSE-2013-Jalangi.git
+     sudo chown -R vagrant FSE-2013-Jalangi/
+     cd FSE-2013-Jalangi
+     python ./scripts/install.py
+
+     #Get terminal on desktop
+     cd ..
+     sudo chmod -R +rw FSE-2013-Jalangi
+     sudo cp /usr/share/applications/gnome-terminal.desktop .
+     sudo chmod +x ./gnome-terminal.desktop
+
+     #Get files on desktop
+     cd FSE-2013-Jalangi/build-vm/desktop-files
+     mv Installation.txt /home/vagrant/Desktop/
+     mv Readme.txt /home/vagrant/Desktop/
+     mv jalangi-paper.pdf /home/vagrant/Desktop/
+     mv LICENSE.txt /home/vagrant/Desktop/
+     mv jalangi-repository.desktop /home/vagrant/Desktop/
+     mv YoutubeDemonstration.desktop /home/vagrant/Desktop/
+     mv concolic.txt /home/vagrant/Desktop/
+     mv sunspider.txt /home/vagrant/Desktop/
+    
+     #Remove sidebar icons
+     sudo rm '/usr/share/applications/libreoffice-writer.desktop' 
+     sudo rm '/usr/share/applications/libreoffice-calc.desktop' 
+     sudo rm '/usr/share/applications/libreoffice-impress.desktop' 
+     sudo rm '/usr/share/applications/ubuntu-software-center.desktop'
+     sudo rm '/usr/share/applications/ubuntu-amazon-default.desktop'
+     
+     #For autolock
+     sudo mkdir /etc/lightdm/lightdm.conf.d
+     sudo touch /etc/lightdm/lightdm.conf.d/50-myconfig.conf
+     echo -e "[SeatDefaults]\nautologin-user=vagrant" >> /etc/lightdm/lightdm.conf.d/50-myconfig.conf
+
+     #Put programs on start-up.
+     cd /home/vagrant/.config/
+     mkdir autostart
+     cd /home/vagrant/Desktop/FSE-2013-Jalangi/build-vm/config-files/
+     sudo mv gnome-terminal.desktop /home/vagrant/.config/autostart/
+     sudo mv open-readme.desktop /home/vagrant/.config/autostart/
+
+     #Reboot
+     sudo reboot
   SHELL
 end
