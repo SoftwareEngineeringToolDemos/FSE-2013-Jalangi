@@ -16,8 +16,12 @@ Concolic Testing:
 	python scripts/jalangi.py rerunall <test-file>
 
 View "concolic.txt" on the desktop for a list of sample files.
-
 NOTE: Do not include ".js" at the end of the filenames.
+
+Example:
+
+	python scripts/jalangi.py concolic -i 100000 tests/unit/qsort
+        python scripts/jalangi.py rerunall tests/unit/qsort
 
 ========================
 Symbolic Test Generation:
@@ -61,8 +65,8 @@ To switch default browsers:
 	2. In the search bar, search for and double-click "Details." 
 	3. Set default browser in the "Default Applications" menu.
 
-See "tests/tizen" for sample javascript apps, specifically "annex." Some have degraded
-and won't work.
+See "tests/tizen" for sample javascript apps, specifically "annex" (which I've filled in
+in the examples below). Some of the others have degraded and won't work as intended.
 
 =====================================
 Recording/Replaying a Web Application:
