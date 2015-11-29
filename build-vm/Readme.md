@@ -21,4 +21,7 @@ The base box used for the Vagrant script is [box-cutter/ubuntu1404-desktop](http
 
 You may need SSH for Vagrant to work. For Windows, you can use OpenSSH as part of [Cygwin](https://www.cygwin.com/).
 
-The commands for silenty installing Java were found [here](http://askubuntu.com/questions/190582/installing-java-automatically-with-silent-option).
+Sources for certain commands used in the script:
+[Silenty installing Java](http://askubuntu.com/questions/190582/installing-java-automatically-with-silent-option).
+[Autostart programs](http://askubuntu.com/questions/48321/how-do-i-start-applications-automatically-on-login)
+[AutoLogin](https://help.ubuntu.com/community/AutoLogin)
