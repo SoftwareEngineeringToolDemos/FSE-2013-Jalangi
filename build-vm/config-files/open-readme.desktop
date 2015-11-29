@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
 Name=<Name of application as displayed>
-Exec=gedit ~/Desktop/Readme.txt
+Exec=gedit /home/vagrant/Desktop/Readme.txt
 X-GNOME-Autostart-enabled=true
