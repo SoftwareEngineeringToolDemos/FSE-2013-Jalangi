@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Terminal
+Exec=gnome-terminal -x bash -e "cd ~/Desktop/FSE-2013-Jalangi"
+X-GNOME-Autostart-enabled=true
