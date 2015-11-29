@@ -3,8 +3,7 @@
 1. Download and install [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/).
 2. Download this folder ("build-vm").
 3. In a terminal, navigate to this folder and run the command "vagrant up".
-
-The console then prints out the script's progress, which will take several minutes before completion. Midway through the process, a window for the new VM should open on your desktop, but you shouldn't try to use the VM until your initial terminal is finished running scripts.
+4. Wait for several minutes as script runs. The VM's screen will pop-up midway through preparation, but don't use it until it's completely finished. Depending on your internet connection, it could take somewhere between 10 and 15 minutes, and it will reboot before it's done.
 
 In this version, the script only creates an instance of Ubuntu 14.04 and installs Java 7. This script was modified slightly from the command line installation that the [official Jalangi Readme](https://github.com/SoftwareEngineeringToolDemos/FSE-2013-Jalangi/blob/master/README.md) provides.
 
