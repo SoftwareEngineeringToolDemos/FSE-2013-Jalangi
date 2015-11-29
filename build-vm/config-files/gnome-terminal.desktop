@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
 Name=Terminal
-Exec=gnome-terminal -x bash -e "cd /home/vagrant/Desktop/FSE-2013-Jalangi"
+Exec=gnome-terminal -e "bash -c 'cd /home/vagrant/Desktop/FSE-2013-Jalangi'"
 X-GNOME-Autostart-enabled=true
