@@ -14,12 +14,13 @@ To run the commands below, prepare by doing the following:
 
 ========================
 Concolic Testing:
+Enter the following commands, filling in for <test-file>
 
 	python scripts/jalangi.py concolic -i 100000 <test-file>
 	python scripts/jalangi.py rerunall <test-file>
 
 View "concolic.txt" on the desktop for a list of sample files.
-NOTE: Do not include ".js" at the end of the filenames.
+Do not include ".js" at the end of the filenames.
 
 Example:
 
@@ -28,6 +29,7 @@ Example:
 
 ========================
 Symbolic Test Generation:
+Enter the following command, filling in for <test-file>
 
 	python scripts/jalangi.py symbolic -i 100000 <test-file>
 
@@ -40,6 +42,7 @@ Example:
 
 ========================
 Dynamic Analyses:
+Enter the following command, filling for <analysis-path> and <file-path>:
 
 	python scripts/jalangi.py analyze -a <analysis-path> <file-path>
 
@@ -49,21 +52,20 @@ Analysis Paths (premade):
 	Object Allocation Profiler:	src/js/analyses/objectalloc/ObjectAllocationTrackerEngine
 	Dynamic Taint Analysis:	 	src/js/analyses/simpletaint/SimpleTaintEngine
 
-These can be run on any javascript file in the tests folder. View
-"sunspider.txt" for sample files, as well as other test folders 
-in that same directory (such as "unit"):
+These can be run on any javascript file in the tests folder. 
+View "sunspider.txt" for sample files:
 
 	python scripts/jalangi.py analyze -a src/js/analyses/objectalloc/ObjectAllocationTrackerEngine tests/sunspider1/crypto-aes
 	python scripts/jalangi.py analyze -a src/js/analyses/likelytype/LikelyTypeInferEngine tests/sunspider1/crypto-sha1
 
-NOTE: In choosing a test file, do not include the ".js" at the end of its name.
-      Also, avoid the files that end with "_jalangi_.js", as they are the 
+In choosing a test file, do not include the ".js" at the end of its name.
+Also, avoid the files that end with "_jalangi_.js", as they are the 
       instrumented versions of the similarly named files.
 
-
-
 ========================
-The below two options are for running javascript apps in browsers. This VM
+========================
+
+The two options below are for running javascript apps in browsers. This VM
 is equipped with both Firefox and Chromium. Jalangi should work with either,
 but you may find that errors using one will not arise using the other.
 
@@ -77,7 +79,7 @@ in the examples below). Some of the others have degraded and won't work as inten
 
 ========================
 Recording/Replaying a Web Application:
-Enter the following commands in the terminal:
+Enter the following commands in the terminal, filling in for <analysis-path>:
 
 	node src/js/commands/instrument.js --outputDir /tmp tests/tizen/annex
 	killall node
