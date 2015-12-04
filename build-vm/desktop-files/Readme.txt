@@ -1,11 +1,13 @@
 =====================Readme=====================
-- To see the official README, view "README.md" in the source folder. 
+- To see the official README, view "README.md" in the 
+  FSE-2013-Jalangi folder. 
 
 - For the currently maintained version of Jalangi, visit the
   page for Jalangi2 (https://github.com/Samsung/jalangi2).
 
 - To write your own analyses, view the templates
-  in analysis.md and analysis2.md in the docs folder.
+  in analysis.md and analysis2.md in the 
+  FSE-2013-Jalangi/docs folder.
 
 To run the commands below, prepare by doing the following:
 	1. Open a terminal
