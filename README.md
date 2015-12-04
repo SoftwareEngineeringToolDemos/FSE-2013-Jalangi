@@ -309,5 +309,6 @@ In this repository, for Jalangi Tool, you will find:
 * :white_check_mark: Source code (available)
 * :white_check_mark: Instructions for interacting with the code directly (available above)
 * :x: Plug-in for Tizen IDE (not available)
+* :white_check_mark: [Virtual machine containing tool](https://drive.google.com/open?id=0B5PsYq45uZxnSWNlMXY4QVNkdkU)
 
 This repository was constructed by [Justin A. Middleton](https://github.com/JustinAMiddleton) under the supervision of [Emerson Murphy-Hill](https://github.com/CaptainEmerson). Thanks to Koushik Sen, Swaroop Kalasapur, Tasneem Brutch, and Simon Gibbs for their help in establishing this repository. 
