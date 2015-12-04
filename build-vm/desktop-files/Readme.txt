@@ -1,15 +1,18 @@
 =====================Readme=====================
-To see the official README, view the README.md in the source
-folder. For the currently maintained version of Jalangi, visit the
-page for Jalangi2 (https://github.com/Samsung/jalangi2).
+- To see the official README, view "README.md" in the source folder. 
 
-To write your own analyses, view the templates
-in analysis.md and analysis2.md in the docs folder.
+- For the currently maintained version of Jalangi, visit the
+  page for Jalangi2 (https://github.com/Samsung/jalangi2).
 
-All scripts below should be executed in a terminal waiting in the 
-FSE-2013-Jalangi directory:
+- To write your own analyses, view the templates
+  in analysis.md and analysis2.md in the docs folder.
 
-================
+To run the commands below, prepare by doing the following:
+	1. Open a terminal
+	2. Navigate to the FSE-2013-Jalangi directory 
+           (cd ~/Desktop/FSE-2013-Jalangi)
+
+========================
 Concolic Testing:
 
 	python scripts/jalangi.py concolic -i 100000 <test-file>
@@ -31,7 +34,11 @@ Symbolic Test Generation:
 View "concolic.txt" for sample files. For these, "rerunall" won't work, 
 but the tests will be visible in the "jalangi_tmp" folder.
 
-================
+Example:
+
+	python scripts/jalangi.py symbolic -i 100000 tests/unit/qsort
+
+========================
 Dynamic Analyses:
 
 	python scripts/jalangi.py analyze -a <analysis-path> <file-path>
@@ -55,7 +62,7 @@ NOTE: In choosing a test file, do not include the ".js" at the end of its name.
 
 
 
-==========
+========================
 The below two options are for running javascript apps in browsers. This VM
 is equipped with both Firefox and Chromium. Jalangi should work with either,
 but you may find that errors using one will not arise using the other.
@@ -68,7 +75,7 @@ To switch default browsers:
 See "tests/tizen" for sample javascript apps, specifically "annex" (which I've filled in
 in the examples below). Some of the others have degraded and won't work as intended.
 
-=====================================
+========================
 Recording/Replaying a Web Application:
 Enter the following commands in the terminal:
 
@@ -76,25 +83,26 @@ Enter the following commands in the terminal:
 	killall node
 	python scripts/jalangi.py rrserver file:///tmp/annex/index.html
 
-	(At this point, the browser launches. Play for a bit, then flush the trace
-	by pressing "Alt+Shift+T," then close the browser.)
+		(At this point, the browser launches. Play for a bit, then flush the trace
+		by pressing "Alt+Shift+T," then close the browser.)
 
 	cp jalangi_trace1 /tmp/annex
 	node src/js/commands/replay.js --tracefile /tmp/annex/jalangi_trace1 --analysis <analysis-path>
 
 The analysis paths are the same as the ones in the "Dynamic Analysis" section.
 
-===================
+========================
 In-Browser Analysis:
+Enter the following commands, filling in for <IB-analysis-path>:
+
 	node src/js/commands/instrument.js --inbrowser --smemory --analysis <IB-analysis-path> --outputDir /tmp tests/tizen/annex
 	xdg-open file:///tmp/annex/index.html (or navigate to the file location in a browser)
 
-	(First, open the browser console by pressing "Ctrl+Shift+J".
-	 After a few moves, you can view the output by pressing "Alt-Shift-T".)
+		(First, open the browser console by pressing "Ctrl+Shift+J".
+		 After a few moves, you can view the output by pressing "Alt-Shift-T".)
 
 IB Analysis Paths:
 	src/js/analyses/likelytype/LikelyTypeInferEngineIB.js
 	src/js/analyses/objectalloc/ObjectAllocationTrackerEngineIB.js
 
-
-====================
+========================
